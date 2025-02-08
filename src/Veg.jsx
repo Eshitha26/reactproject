@@ -10,7 +10,7 @@ function Veg() {
   const itemsPerPage = 6;
   const [currentPage, setCurrentPage] = useState(1);
 
-  const totalPages = Math.ceil(veg.length / itemsPerPage);
+  const totalPages = (veg.length / itemsPerPage);
   const startIndex = (currentPage - 1) * itemsPerPage;
   const currentVegItems = veg.slice(startIndex, startIndex + itemsPerPage);
 

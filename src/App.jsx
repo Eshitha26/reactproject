@@ -1,6 +1,6 @@
 import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import '@fortawesome/fontawesome-free/css/all.min.css';
-import Aboutus from "./aboutus";
+
 
 import Home from "./Home";
 import "./App.css";
@@ -15,6 +15,7 @@ import { logout } from "./Store";
 import { Container, Navbar, Nav, Button, Badge } from "react-bootstrap";
 import Veg from "./Veg";
 import Contactus from "./Contactus";
+import Aboutus from "./Aboutus";
 
 function App() {
   const cart = useSelector((state) => state.cart);
@@ -54,10 +55,10 @@ function App() {
                 <i className="fas fa-clipboard-list me-1"></i>Order
               </Nav.Link>
               <Nav.Link as={Link} to="/aboutus" className="text-light">
-                <i className="fas fa-info-circle me-1"></i>About Us
+                <i className="fas fa-info-circle me-1"></i>AboutUs
               </Nav.Link>
               <Nav.Link as={Link} to="/contactus" className="text-light">
-                <i className="fas fa-phone me-1"></i>Contact Us
+                <i className="fas fa-phone me-1"></i>ContactUs
               </Nav.Link>
             </Nav>
             <Nav>
