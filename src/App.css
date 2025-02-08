@@ -1,0 +1,5 @@
+.class {
+  padding: 40px; /* Equivalent Bootstrap utility: p-5 (padding 40px) */
+  margin: 10px;  /* Equivalent Bootstrap utility: m-2 (margin 10px) */
+  color: rgb(127, 98, 177); /* Bootstrap doesn't provide text color for this specific shade; use custom */
+}
