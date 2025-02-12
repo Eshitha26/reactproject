@@ -138,4 +138,4 @@ const store=configureStore({
 export default store;
 export const{addToCart,increment,decrement,remove,clearCart}=cartSlice.actions;
 export const{addPurchaseDetails}=purchaseSlice.actions;
-export const {login,logout} = authSlice.actions
+export const {login,logout} = authSlice.actions;
