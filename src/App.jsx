@@ -1,6 +1,6 @@
 import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import '@fortawesome/fontawesome-free/css/all.min.css';
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Home from "./Home";
 import "./App.css";
@@ -26,7 +26,9 @@ function App() {
 
   return (
     <BrowserRouter>
+      {/* Fixed Navbar */}
       <Navbar
+        fixed="top"
         style={{ background: "linear-gradient(45deg, #6a11cb, #2575fc)" }}
         variant="dark"
         expand="lg"
@@ -49,7 +51,8 @@ function App() {
                 <i className="fas fa-glass-whiskey me-1"></i>Milk
               </Nav.Link>
               <Nav.Link as={Link} to="/cart" className="text-light">
-                <i className="fas fa-shopping-cart me-1"></i>Cart <Badge bg="light" text="dark">{totalItems}</Badge>
+                <i className="fas fa-shopping-cart me-1"></i>Cart 
+                <Badge bg="light" text="dark">{totalItems}</Badge>
               </Nav.Link>
               <Nav.Link as={Link} to="/order" className="text-light">
                 <i className="fas fa-clipboard-list me-1"></i>Order
@@ -61,6 +64,7 @@ function App() {
                 <i className="fas fa-phone me-1"></i>ContactUs
               </Nav.Link>
             </Nav>
+
             <Nav>
               {isAuthenticated ? (
                 <>
@@ -91,7 +95,8 @@ function App() {
         </Container>
       </Navbar>
 
-      <Container>
+      {/* Page Content Container */}
+      <Container className="main-content">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />

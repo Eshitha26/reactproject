@@ -1,39 +1,3 @@
-/*import { useSelector } from "react-redux";
-
-function Order() {
-  const orders = useSelector((state) => state.purchasedetails);
-
-  const orderItems = orders.map((purchase, index) => (
-    <div key={index} className="card mb-3">
-      <div className="card-body">
-        <h5 className="card-title">Order Date: {purchase.date}</h5>
-        <ul className="list-group">
-          {purchase.items.map((item, itemIndex) => (
-            <li key={itemIndex} className="list-group-item d-flex justify-content-between">
-              <span>{item.name}</span>
-              <span>${item.price.toFixed(2)}</span>
-              <span>Qty: {item.quantity}</span>
-            </li>
-          ))}
-        </ul>
-        <p className="mt-3 fw-bold">Total Amount: ${purchase.totalPrice.toFixed(2)}</p>
-      </div>
-    </div>
-  ));
-
-  return (
-    <div className="container mt-5">
-      <h2 className="mb-4">Order History</h2>
-      {orders.length === 0 ? (
-        <p className="alert alert-warning">No purchase history available</p>
-      ) : (
-        <div>{orderItems}</div>
-      )}
-    </div>
-  );
-}
-
-export default Order;*/
 import { useSelector } from "react-redux";
 
 function Order() {

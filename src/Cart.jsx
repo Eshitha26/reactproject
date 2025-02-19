@@ -1,10 +1,13 @@
 import { useDispatch, useSelector } from "react-redux";
 import { addPurchaseDetails, clearCart, increment, decrement, remove } from "./Store";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function Cart() {
   const cartItems = useSelector((state) => state.cart);
+  const { isAuthenticated } = useSelector((state) => state.auth); // Check if user is logged in
   const dispatch = useDispatch();
+  const navigate = useNavigate(); // Used for redirection
 
   const [discountPercentage, setDiscountPercentage] = useState(0);
   const [showDiscount, setShowDiscount] = useState(false);
@@ -18,16 +21,16 @@ function Cart() {
 
   const handleCoupon = () => {
     switch (couponCode.toUpperCase()) {
-      case "RATAN10":
+      case "COUPON10":
         setCouponCodeDiscountPer(10);
         break;
-      case "RATAN20":
+      case "COUPON20":
         setCouponCodeDiscountPer(20);
         break;
-      case "RATAN30":
+      case "COUPON30":
         setCouponCodeDiscountPer(30);
         break;
-      case "RATAN40":
+      case "COUPON40":
         setCouponCodeDiscountPer(40);
         break;
       default:
@@ -37,17 +40,28 @@ function Cart() {
   };
 
   const handlePurchase = () => {
+    if (!isAuthenticated) {
+      // Redirect to login if not logged in
+      alert("You need to log in first!");
+      navigate("/login");
+      return;
+    }
+
     const purchaseDate = new Date().toLocaleDateString();
-    const purchaseTime= new Date().toLocaleTimeString();
+    const purchaseTime = new Date().toLocaleTimeString();
 
     const purchaseDetails = {
       items: [...cartItems],
       totalPrice: totalPrice,
       date: purchaseDate,
-      time:purchaseTime
+      time: purchaseTime,
     };
+
     dispatch(addPurchaseDetails(purchaseDetails));
     dispatch(clearCart());
+
+    // Redirect to order page after purchase
+    navigate("/order");
   };
 
   return (
@@ -134,3 +148,4 @@ function Cart() {
 }
 
 export default Cart;
+
