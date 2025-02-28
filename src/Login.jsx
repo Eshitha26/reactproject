@@ -20,7 +20,7 @@ function Login() {
   };
 
   return (
-    <div className="container mt-5">
+    <div className="container mt-5" style={{paddingLeft:"600px"}}>
       <h1 className="text-center text-primary mb-4">Login Page</h1>
       <div className="card p-4 shadow-sm mx-auto" style={{ maxWidth: "400px" }}>
         <div className="mb-3">

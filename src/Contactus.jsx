@@ -3,7 +3,7 @@ import { faEnvelope, faPhone, faMapMarkerAlt } from "@fortawesome/free-solid-svg
 
 function Contactus() {
   return (
-    <div className="container min-vh-100 d-flex flex-column justify-content-center align-items-center">
+    <div className="container min-vh-100" style={{paddingLeft:"400px"}}>
       <div className="w-100 d-flex justify-content-center">
         <div
           className="card text-center shadow-lg p-4 mb-4 bg-light rounded"
