@@ -1,0 +1,13 @@
+/* Order.css */
+  .order-content {
+    width: 10000%;
+    max-width: 800px;
+    background-color: white;
+    border-radius: 36px;
+    padding: 80px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    height: max-content; 
+    align-items: center;
+    
+  }
+  

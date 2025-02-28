@@ -16,7 +16,7 @@ function Milk() {
   // Define price range categories
   const priceRanges = [
     { label: "< $100", min: 0, max: 99.99 },
-    { label: "$100 - $200", min: 10, max: 20 },
+    { label: "$100 - $200", min: 100, max: 200 },
     { label: "> $200", min: 200.01, max: Infinity },
   ];
 

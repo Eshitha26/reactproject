@@ -1,39 +1,60 @@
-import { Container, Row, Col, Card, Button } from "react-bootstrap";
+import { Carousel, Button } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
+import "./Home.css"; // Import custom CSS for full-page styling
 
 function Home() {
+  const navigate = useNavigate(); // Hook for navigation
+
   return (
-    <Container className="mt-5">
-      <Row className="justify-content-center">
-        <Col md={8}>
-          <Card className="text-center shadow-lg p-3 mb-5 bg-light rounded">
-            <Card.Body>
-              <h2>FreshMart</h2>
-              <Card.Text className="lead mt-3">
-                Welcome to the Mart. Enjoy fresh and high-quality products!
-              </Card.Text>
-              <Row className="mt-4">
-                <Col md={5} className="text-center">
-                  <img src="/veg.png" alt="Vegetables" className="img-fluid rounded" />
-                  <p className="mt-2">Fresh Vegetables</p>
-                </Col>
-                <Col md={6} className="text-center">
-                  <img src="/Nonvege.png" alt="Non-Veg Products" className="img-fluid rounded" />
-                  <p className="mt-2">High-Quality Non-Veg</p>
-                </Col>
-                <center>
-                <Col md={5} className="text-center">
-                  <img src="/milkproducts.png" alt="Milk Products" className="img-fluid rounded" />
-                  <p className="mt-2">Fresh Dairy Products</p>
-                </Col>
-                </center>
-              </Row>
-            </Card.Body>
-          </Card>
-        </Col>
-      </Row>
-    </Container>
+    <div className="fullpage-carousel">
+      <Carousel fade interval={3000} controls={true} indicators={true}>
+        <Carousel.Item onClick={() => navigate("/veg")} className="carousel-item-fullpage">
+          <img
+            className="d-block w-100"
+            src="/veg.png"
+            alt="Fresh Vegetables"
+          />
+          <Carousel.Caption>
+            <h1>Fresh Vegetables 🥦🥕</h1>
+            <p>Click to explore fresh and organic vegetables.</p>
+            <Button variant="success" onClick={() => navigate("/veg")}>
+              Explore Veggies
+            </Button>
+          </Carousel.Caption>
+        </Carousel.Item>
+
+        <Carousel.Item onClick={() => navigate("/nonveg")} className="carousel-item-fullpage">
+          <img
+            className="d-block w-100"
+            src="/Nonvege.png"
+            alt="High-Quality Non-Veg"
+          />
+          <Carousel.Caption>
+            <h1>High-Quality Non-Veg 🍗🥩</h1>
+            <p>Click to browse premium non-veg products.</p>
+            <Button variant="danger" onClick={() => navigate("/nonveg")}>
+              Explore Non-Veg
+            </Button>
+          </Carousel.Caption>
+        </Carousel.Item>
+
+        <Carousel.Item onClick={() => navigate("/milk")} className="carousel-item-fullpage">
+          <img
+            className="d-block w-100"
+            src="/milkproducts.png"
+            alt="Fresh Dairy Products"
+          />
+          <Carousel.Caption>
+            <h1>Fresh Dairy Products 🥛🧀</h1>
+            <p>Click to view fresh dairy products for daily use.</p>
+            <Button variant="warning" onClick={() => navigate("/milk")}>
+              Explore Dairy
+            </Button>
+          </Carousel.Caption>
+        </Carousel.Item>
+      </Carousel>
+    </div>
   );
 }
 
 export default Home;
-
